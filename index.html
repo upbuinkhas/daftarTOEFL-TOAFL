@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Pendaftaran Ujian TOEFL & TOAFL - Pusat Bahasa</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                        emerald: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            600: '#059669',
+                            700: '#047857',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-primary-600 selection:text-white">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-md border-b border-slate-200 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary-700 to-primary-500 flex items-center justify-center text-white shadow-md shadow-primary-500/20">
+                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="font-bold text-lg tracking-tight text-slate-900 block leading-none">UPT Bahasa</span>
+                        <span class="text-xs text-slate-500 font-medium">Sertifikasi TOEFL & TOAFL</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Links (Desktop) -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                    <a href="#informasi" class="hover:text-primary-600 transition-colors">Jenis Tes</a>
+                    <a href="#jadwal" class="hover:text-primary-600 transition-colors">Jadwal & Kuota</a>
+                    <a href="#alur" class="hover:text-primary-600 transition-colors">Alur Pendaftaran</a>
+                    <a href="#formulir" class="px-4 py-2 rounded-xl bg-primary-600 text-white hover:bg-primary-700 transition-all shadow-sm hover:shadow">Daftar Sekarang</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2">
+            <a href="#informasi" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50">Jenis Tes</a>
+            <a href="#jadwal" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50">Jadwal & Kuota</a>
+            <a href="#alur" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50">Alur Pendaftaran</a>
+            <a href="#formulir" class="block px-3 py-2 rounded-lg text-base font-medium bg-primary-600 text-white text-center mt-2">Daftar Sekarang</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-white pt-12 pb-16 sm:pt-16 sm:pb-24 border-b border-slate-200">
+        <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] opacity-40"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-50 border border-primary-100 text-primary-700 text-xs font-semibold mb-6">
+                <span class="w-2 h-2 rounded-full bg-primary-600 animate-pulse"></span>
+                Pendaftaran Periode November – Desember 2026 Dibuka
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight max-w-4xl mx-auto leading-tight">
+                Sertifikasi Kemahiran Bahasa Inggris <span class="text-primary-600">(TOEFL)</span> & Bahasa Arab <span class="text-emerald-600">(TOAFL)</span>
+            </h1>
+            <p class="mt-4 sm:mt-6 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                Layanan tes standar resmi berbasis komputer (CBT) dan kertas (PBT) untuk keperluan syarat kelulusan akademik, beasiswa, maupun karir profesional.
+            </p>
+            <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#formulir" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-primary-600 text-white font-semibold hover:bg-primary-700 transition-all shadow-lg shadow-primary-600/20">
+                    <i data-lucide="file-edit" class="w-5 h-5"></i>
+                    Isi Formulir Pendaftaran
+                </a>
+                <a href="#jadwal" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white text-slate-700 font-semibold border border-slate-300 hover:bg-slate-50 transition-all">
+                    <i data-lucide="calendar" class="w-5 h-5 text-slate-500"></i>
+                    Cek Jadwal & Kuota
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informasi Jenis Tes Section -->
+    <section id="informasi" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Pilih Kategori Ujian Anda</h2>
+            <p class="mt-2 text-slate-600 text-sm sm:text-base">Sesuaikan jenis sertifikasi bahasa dengan kebutuhan akademik maupun instansi tujuan Anda.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Card TOEFL -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-primary-50 rounded-bl-full -z-0"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-lg bg-primary-100 text-primary-700 text-xs font-bold uppercase tracking-wider">English Proficiency</span>
+                        <i data-lucide="globe" class="w-6 h-6 text-primary-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900">TOEFL Prediction / ITP</h3>
+                    <p class="mt-2 text-slate-600 text-sm leading-relaxed">
+                        Mengukur kemampuan bahasa Inggris non-penutur asli meliputi <em>Listening Comprehension, Structure & Written Expression,</em> dan <em>Reading Comprehension</em>.
+                    </p>
+                    <ul class="mt-6 space-y-3 text-sm text-slate-700">
+                        <li class="flex items-center gap-2.5">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-primary-600 shrink-0"></i>
+                            <span>Durasi ujian ± 120 menit (140 soal)</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-primary-600 shrink-0"></i>
+                            <span>Skala skor standar 310 – 677</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-primary-600 shrink-0"></i>
+                            <span>Sertifikat terbit maksimal 3 hari kerja</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative z-10 mt-8 pt-6 border-t border-slate-100 flex items-center justify-between">
+                    <div>
+                        <span class="text-xs text-slate-500 block">Biaya Pendaftaran</span>
+                        <span class="text-lg font-bold text-slate-900">Rp 150.000 <span class="text-xs font-normal text-slate-500">(Mahasiswa)</span></span>
+                        <span class="text-xs text-slate-500 block">Rp 250.000 (Umum)</span>
+                    </div>
+                    <button onclick="selectExamFromCard('TOEFL')" class="px-4 py-2.5 rounded-xl bg-primary-50 text-primary-700 font-semibold text-sm hover:bg-primary-600 hover:text-white transition-colors">
+                        Pilih TOEFL
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card TOAFL -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-bl-full -z-0"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-lg bg-emerald-100 text-emerald-700 text-xs font-bold uppercase tracking-wider">Arabic Proficiency</span>
+                        <i data-lucide="book-open" class="w-6 h-6 text-emerald-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900">TOAFL (Test of Arabic)</h3>
+                    <p class="mt-2 text-slate-600 text-sm leading-relaxed">
+                        Ujian standarisasi kemampuan bahasa Arab meliputi <em>Fahm al-Masmu' (Listening), Al-Tarakib wa al-'Ibarat (Structure),</em> dan <em>Fahm al-Maqru' (Reading)</em>.
+                    </p>
+                    <ul class="mt-6 space-y-3 text-sm text-slate-700">
+                        <li class="flex items-center gap-2.5">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                            <span>Durasi ujian ± 120 menit (140 soal)</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                            <span>Skala skor standar 310 – 677</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                            <span>Berlaku untuk syarat sidang skripsi/tesis & beasiswa</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative z-10 mt-8 pt-6 border-t border-slate-100 flex items-center justify-between">
+                    <div>
+                        <span class="text-xs text-slate-500 block">Biaya Pendaftaran</span>
+                        <span class="text-lg font-bold text-slate-900">Rp 125.000 <span class="text-xs font-normal text-slate-500">(Mahasiswa)</span></span>
+                        <span class="text-xs text-slate-500 block">Rp 200.000 (Umum)</span>
+                    </div>
+                    <button onclick="selectExamFromCard('TOAFL')" class="px-4 py-2.5 rounded-xl bg-emerald-50 text-emerald-700 font-semibold text-sm hover:bg-emerald-600 hover:text-white transition-colors">
+                        Pilih TOAFL
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jadwal & Kuota Section -->
+    <section id="jadwal" class="py-12 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900">Jadwal Ujian Tersedia</h2>
+                    <p class="text-sm text-slate-600 mt-1">Pilih tanggal pelaksanaan dengan kuota kursi yang masih tersedia.</p>
+                </div>
+                <div class="flex gap-2">
+                    <button onclick="filterSchedule('ALL')" id="filter-all" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white transition-colors">Semua</button>
+                    <button onclick="filterSchedule('TOEFL')" id="filter-toefl" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">TOEFL</button>
+                    <button onclick="filterSchedule('TOAFL')" id="filter-toafl" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">TOAFL</button>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl border border-slate-200">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-50 border-b border-slate-200 text-xs font-semibold uppercase tracking-wider text-slate-500">
+                            <th class="py-3.5 px-4">Jenis Tes</th>
+                            <th class="py-3.5 px-4">Hari & Tanggal</th>
+                            <th class="py-3.5 px-4">Sesi & Waktu</th>
+                            <th class="py-3.5 px-4">Lokasi / Mode</th>
+                            <th class="py-3.5 px-4">Sisa Kuota</th>
+                            <th class="py-3.5 px-4 text-right">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="schedule-table-body" class="divide-y divide-slate-200 text-sm">
+                        <!-- Rendered via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alur Pendaftaran -->
+    <section id="alur" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="text-2xl font-bold text-slate-900">Alur Pendaftaran Peserta</h2>
+            <p class="text-sm text-slate-600 mt-1">Ikuti 4 langkah mudah berikut untuk mendapatkan kartu peserta ujian.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                <div class="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 font-bold flex items-center justify-center mb-4">1</div>
+                <h3 class="font-bold text-slate-900">Isi Formulir</h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">Lengkapi data diri sesuai kartu identitas (KTP/KTM) dan pilih jenis ujian serta jadwal sesi.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                <div class="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 font-bold flex items-center justify-center mb-4">2</div>
+                <h3 class="font-bold text-slate-900">Dapatkan Kode Bayar</h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">Sistem akan menerbitkan Nomor Virtual Account (VA) dan rincian tagihan secara otomatis.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                <div class="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 font-bold flex items-center justify-center mb-4">3</div>
+                <h3 class="font-bold text-slate-900">Lakukan Pembayaran</h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">Bayar melalui transfer bank / mobile banking maksimal 1x24 jam setelah pendaftaran.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                <div class="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 font-bold flex items-center justify-center mb-4">4</div>
+                <h3 class="font-bold text-slate-900">Cetak Kartu Ujian</h3>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">Hadir 30 menit sebelum ujian dimulai dengan membawa kartu peserta dan identitas asli.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulir Pendaftaran Section -->
+    <section id="formulir" class="py-12 pb-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-200 overflow-hidden">
+            <!-- Form Header -->
+            <div class="bg-slate-900 px-6 py-8 sm:px-10 text-white">
+                <h2 class="text-2xl font-bold">Formulir Pendaftaran Ujian</h2>
+                <p class="text-slate-300 text-sm mt-1">Pastikan penulisan nama lengkap sudah benar karena akan dicetak pada sertifikat resmi.</p>
+            </div>
+
+            <form id="registration-form" class="p-6 sm:p-10 space-y-6">
+                <!-- Pilihan Jenis Ujian -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-800 mb-3">1. Pilih Jenis Ujian <span class="text-red-500">*</span></label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <label class="cursor-pointer relative">
+                            <input type="radio" name="examType" value="TOEFL" class="peer sr-only" checked onchange="updateFormState()">
+                            <div class="p-4 rounded-2xl border-2 border-slate-200 peer-checked:border-primary-600 peer-checked:bg-primary-50/50 transition-all flex items-center justify-between">
+                                <div>
+                                    <span class="font-bold text-slate-900 block">TOEFL Prediction</span>
+                                    <span class="text-xs text-slate-500">Bahasa Inggris</span>
+                                </div>
+                                <div class="w-5 h-5 rounded-full border-2 border-slate-300 peer-checked:border-primary-600 flex items-center justify-center">
+                                    <div class="w-2.5 h-2.5 rounded-full bg-primary-600 opacity-0 peer-checked:opacity-100"></div>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="cursor-pointer relative">
+                            <input type="radio" name="examType" value="TOAFL" class="peer sr-only" onchange="updateFormState()">
+                            <div class="p-4 rounded-2xl border-2 border-slate-200 peer-checked:border-emerald-600 peer-checked:bg-emerald-50/50 transition-all flex items-center justify-between">
+                                <div>
+                                    <span class="font-bold text-slate-900 block">TOAFL</span>
+                                    <span class="text-xs text-slate-500">Bahasa Arab</span>
+                                </div>
+                                <div class="w-5 h-5 rounded-full border-2 border-slate-300 peer-checked:border-emerald-600 flex items-center justify-center">
+                                    <div class="w-2.5 h-2.5 rounded-full bg-emerald-600 opacity-0 peer-checked:opacity-100"></div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Kategori Peserta -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="participantCategory" class="block text-sm font-semibold text-slate-800 mb-2">2. Kategori Peserta <span class="text-red-500">*</span></label>
+                        <select id="participantCategory" name="participantCategory" onchange="updateFormState()" class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-slate-800 text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all">
+                            <option value="MAHASISWA">Mahasiswa Internal (S1/D3/D4)</option>
+                            <option value="PASCASARJANA">Mahasiswa Pascasarjana (S2/S3)</option>
+                            <option value="UMUM">Peserta Umum / Eksternal</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="examSchedule" class="block text-sm font-semibold text-slate-800 mb-2">3. Pilih Jadwal & Sesi <span class="text-red-500">*</span></label>
+                        <select id="examSchedule" name="examSchedule" required class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-slate-800 text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all">
+                            <!-- Populated dynamically based on examType -->
+                        </select>
+                    </div>
+                </div>
+
+                <hr class="border-slate-200">
+
+                <!-- Biodata Peserta -->
+                <div class="space-y-4">
+                    <h3 class="text-base font-bold text-slate-900">Data Identitas Peserta</h3>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label for="fullName" class="block text-sm font-medium text-slate-700 mb-1.5">Nama Lengkap (Sesuai KTP/KTM) <span class="text-red-500">*</span></label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="Contoh: Ahmad Fauzan" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none">
+                        </div>
+
+                        <div>
+                            <label for="idNumber" id="idNumberLabel" class="block text-sm font-medium text-slate-700 mb-1.5">NIM (Nomor Induk Mahasiswa) <span class="text-red-500">*</span></label>
+                            <input type="text" id="idNumber" name="idNumber" required placeholder="Masukkan NIM Anda" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label for="birthPlace" class="block text-sm font-medium text-slate-700 mb-1.5">Tempat Lahir <span class="text-red-500">*</span></label>
+                            <input type="text" id="birthPlace" name="birthPlace" required placeholder="Contoh: Jember" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none">
+                        </div>
+
+                        <div>
+                            <label for="birthDate" class="block text-sm font-medium text-slate-700 mb-1.5">Tanggal Lahir <span class="text-red-500">*</span></label>
+                            <input type="date" id="birthDate" name="birthDate" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-700 mb-1.5">Alamat Email Aktif <span class="text-red-500">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="nama@email.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none">
+                        </div>
+
+                        <div>
+                            <label for="whatsapp" class="block text-sm font-medium text-slate-700 mb-1.5">Nomor WhatsApp <span class="text-red-500">*</span></label>
+                            <input type="tel" id="whatsapp" name="whatsapp" required placeholder="0812xxxxxxxx" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none">
+                        </div>
+                    </div>
+
+                    <div id="facultyField">
+                        <label for="faculty" class="block text-sm font-medium text-slate-700 mb-1.5">Fakultas / Program Studi <span class="text-red-500">*</span></label>
+                        <input type="text" id="faculty" name="faculty" placeholder="Contoh: Fakultas Ilmu Budaya - Sastra Inggris" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none">
+                    </div>
+
+                    <div>
+                        <label for="purpose" class="block text-sm font-medium text-slate-700 mb-1.5">Tujuan Mengikuti Tes <span class="text-red-500">*</span></label>
+                        <select id="purpose" name="purpose" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 bg-white text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none">
+                            <option value="Syarat Sidang Skripsi / Tugas Akhir">Syarat Sidang Skripsi / Tugas Akhir</option>
+                            <option value="Syarat Sidang Tesis / Disertasi">Syarat Sidang Tesis / Disertasi</option>
+                            <option value="Pendaftaran Beasiswa (LPDP / Dalam & Luar Negeri)">Pendaftaran Beasiswa (LPDP / Dalam & Luar Negeri)</option>
+                            <option value="Melamar Pekerjaan / CPNS / BUMN">Melamar Pekerjaan / CPNS / BUMN</option>
+                            <option value="Evaluasi Kemampuan Pribadi">Evaluasi Kemampuan Pribadi</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Ringkasan Biaya Box -->
+                <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Total Biaya Pendaftaran</span>
+                        <div class="flex items-baseline gap-2 mt-1">
+                            <span id="priceDisplay" class="text-2xl font-extrabold text-slate-900">Rp 150.000</span>
+                            <span id="priceNote" class="text-xs text-slate-500">(Tarif Mahasiswa Internal)</span>
+                        </div>
+                    </div>
+                    <div class="text-xs text-slate-600 bg-white px-3.5 py-2 rounded-xl border border-slate-200">
+                        Termasuk biaya administrasi & cetak 1 lembar sertifikat asli.
+                    </div>
+                </div>
+
+                <!-- Persetujuan -->
+                <div class="flex items-start gap-3">
+                    <input type="checkbox" id="terms" required class="mt-1 w-4 h-4 rounded text-primary-600 border-slate-300 focus:ring-primary-500">
+                    <label for="terms" class="text-xs text-slate-600 leading-relaxed">
+                        Saya menyatakan bahwa data yang diisikan adalah benar dan dapat dipertanggungjawabkan. Saya memahami bahwa biaya pendaftaran yang sudah dibayarkan tidak dapat dikembalikan (<em>non-refundable</em>), namun jadwal dapat diubah maksimal H-2 sebelum pelaksanaan ujian.
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full py-4 px-6 rounded-xl bg-primary-600 hover:bg-primary-700 text-white font-bold text-base shadow-lg shadow-primary-600/25 transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="send" class="w-5 h-5"></i>
+                    Kirim Pendaftaran & Terbitkan Kode Bayar
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-primary-600 flex items-center justify-center text-white">
+                    <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <span class="font-bold text-white block leading-none">UPT Pusat Bahasa</span>
+                    <span class="text-xs text-slate-400">Layanan Sertifikasi TOEFL & TOAFL Resmi</span>
+                </div>
+            </div>
+            <div class="text-xs text-center md:text-right space-y-1">
+                <p>Gedung Pusat Bahasa Lt. 2 • Jam Layanan: Senin – Jumat (08.00 – 16.00 WIB)</p>
+                <p>&copy; 2026 UPT Pusat Bahasa. Seluruh hak cipta dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Bukti Pendaftaran (Custom Message Box - Tanpa alert()) -->
+    <div id="receipt-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/70 backdrop-blur-sm overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200 my-8 animate-[fadeIn_0.2s_ease-out]">
+            <div class="bg-emerald-600 px-6 py-6 text-white text-center relative">
+                <button onclick="closeModal()" class="absolute top-4 right-4 text-white/80 hover:text-white p-1 rounded-lg">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+                <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-3">
+                    <i data-lucide="check-circle" class="w-7 h-7 text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold">Pendaftaran Berhasil!</h3>
+                <p class="text-emerald-100 text-xs mt-1">Simpan bukti registrasi & selesaikan pembayaran sebelum batas waktu.</p>
+            </div>
+
+            <div class="p-6 space-y-5 text-sm">
+                <!-- Kode Registrasi & VA -->
+                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="text-slate-500 text-xs">No. Registrasi</span>
+                        <span id="modal-reg-id" class="font-mono font-bold text-slate-900">REG-2026-8841</span>
+                    </div>
+                    <div class="flex justify-between items-center pt-2 border-t border-slate-200">
+                        <div>
+                            <span class="text-slate-500 text-xs block">Nomor Virtual Account (BNI / Mandiri)</span>
+                            <span id="modal-va-number" class="font-mono font-extrabold text-base text-primary-700 tracking-wider">8801202699412</span>
+                        </div>
+                        <button onclick="copyVA()" id="copy-btn" class="px-3 py-1.5 rounded-lg bg-white border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-100 flex items-center gap-1.5 transition-colors">
+                            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                            <span id="copy-text">Salin</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Detail Peserta -->
+                <div class="space-y-2.5 text-xs sm:text-sm">
+                    <div class="flex justify-between py-1 border-b border-slate-100">
+                        <span class="text-slate-500">Nama Peserta</span>
+                        <span id="modal-name" class="font-semibold text-slate-900 text-right">-</span>
+                    </div>
+                    <div class="flex justify-between py-1 border-b border-slate-100">
+                        <span class="text-slate-500">NIM / NIK</span>
+                        <span id="modal-id" class="font-semibold text-slate-900">-</span>
+                    </div>
+                    <div class="flex justify-between py-1 border-b border-slate-100">
+                        <span class="text-slate-500">Jenis Ujian</span>
+                        <span id="modal-exam" class="font-bold text-primary-600">-</span>
+                    </div>
+                    <div class="flex justify-between py-1 border-b border-slate-100">
+                        <span class="text-slate-500">Jadwal Ujian</span>
+                        <span id="modal-schedule" class="font-semibold text-slate-900 text-right max-w-[60%]">-</span>
+                    </div>
+                    <div class="flex justify-between py-1">
+                        <span class="text-slate-500">Total Tagihan</span>
+                        <span id="modal-price" class="font-extrabold text-emerald-700 text-base">-</span>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs text-amber-800 flex items-start gap-2.5">
+                    <i data-lucide="clock" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+                    <span>Batas waktu pembayaran <strong>24 jam</strong> sejak pendaftaran. Konfirmasi otomatis terkirim ke email & WhatsApp Anda setelah pembayaran diverifikasi.</span>
+                </div>
+
+                <div class="flex gap-3 pt-2">
+                    <button onclick="window.print()" class="flex-1 py-2.5 px-4 rounded-xl border border-slate-300 text-slate-700 font-semibold text-xs sm:text-sm hover:bg-slate-50 flex items-center justify-center gap-2">
+                        <i data-lucide="printer" class="w-4 h-4"></i>
+                        Cetak Bukti
+                    </button>
+                    <button onclick="closeModal()" class="flex-1 py-2.5 px-4 rounded-xl bg-slate-900 text-white font-semibold text-xs sm:text-sm hover:bg-slate-800">
+                        Selesai
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data Jadwal Ujian (November - Desember 2026)
+        const schedules = [
+            { id: 'TFL-01', type: 'TOEFL', date: 'Sabtu, 28 November 2026', session: 'Sesi 1 (08.00 – 10.30 WIB)', room: 'Lab Bahasa A (CBT)', quota: 12 },
+            { id: 'TFL-02', type: 'TOEFL', date: 'Sabtu, 28 November 2026', session: 'Sesi 2 (13.00 – 15.30 WIB)', room: 'Lab Bahasa B (CBT)', quota: 18 },
+            { id: 'TFL-03', type: 'TOEFL', date: 'Rabu, 02 Desember 2026', session: 'Sesi 1 (09.00 – 11.30 WIB)', room: 'Aula Utama (PBT)', quota: 25 },
+            { id: 'TFL-04', type: 'TOEFL', date: 'Sabtu, 05 Desember 2026', session: 'Sesi 1 (08.00 – 10.30 WIB)', room: 'Online (Zoom Proctored)', quota: 0 },
+            { id: 'TAF-01', type: 'TOAFL', date: 'Minggu, 29 November 2026', session: 'Sesi 1 (08.00 – 10.30 WIB)', room: 'Lab Bahasa A (CBT)', quota: 15 },
+            { id: 'TAF-02', type: 'TOAFL', date: 'Kamis, 03 Desember 2026', session: 'Sesi 1 (09.00 – 11.30 WIB)', room: 'Lab Bahasa C (CBT)', quota: 20 },
+            { id: 'TAF-03', type: 'TOAFL', date: 'Minggu, 06 Desember 2026', session: 'Sesi 2 (13.00 – 15.30 WIB)', room: 'Online (Zoom Proctored)', quota: 9 }
+        ];
+
+        // Tarif Ujian
+        const pricing = {
+            TOEFL: {
+                MAHASISWA: { price: 'Rp 150.000', note: '(Tarif Mahasiswa Internal)' },
+                PASCASARJANA: { price: 'Rp 200.000', note: '(Tarif Mahasiswa S2/S3)' },
+                UMUM: { price: 'Rp 250.000', note: '(Tarif Peserta Umum)' }
+            },
+            TOAFL: {
+                MAHASISWA: { price: 'Rp 125.000', note: '(Tarif Mahasiswa Internal)' },
+                PASCASARJANA: { price: 'Rp 175.000', note: '(Tarif Mahasiswa S2/S3)' },
+                UMUM: { price: 'Rp 200.000', note: '(Tarif Peserta Umum)' }
+            }
+        };
+
+        let currentFilter = 'ALL';
+
+        // Inisialisasi ikon Lucide & data awal
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            renderScheduleTable('ALL');
+            updateFormState();
+        });
+
+        // Toggle Mobile Menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Render Tabel Jadwal
+        function renderScheduleTable(filter) {
+            currentFilter = filter;
+            const tbody = document.getElementById('schedule-table-body');
+            tbody.innerHTML = '';
+
+            const filtered = filter === 'ALL' ? schedules : schedules.filter(s => s.type === filter);
+
+            filtered.forEach(item => {
+                const isFull = item.quota === 0;
+                const badgeClass = item.type === 'TOEFL' 
+                    ? 'bg-primary-100 text-primary-700' 
+                    : 'bg-emerald-100 text-emerald-700';
+
+                const row = document.createElement('tr');
+                row.className = 'hover:bg-slate-50/80 transition-colors';
+                row.innerHTML = `
+                    <td class="py-3.5 px-4">
+                        <span class="px-2.5 py-1 rounded-md text-xs font-bold ${badgeClass}">${item.type}</span>
+                    </td>
+                    <td class="py-3.5 px-4 font-medium text-slate-900">${item.date}</td>
+                    <td class="py-3.5 px-4 text-slate-600">${item.session}</td>
+                    <td class="py-3.5 px-4 text-slate-600">${item.room}</td>
+                    <td class="py-3.5 px-4">
+                        ${isFull 
+                            ? '<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-700">Kuota Penuh</span>'
+                            : `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">${item.quota} Kursi</span>`
+                        }
+                    </td>
+                    <td class="py-3.5 px-4 text-right">
+                        <button 
+                            onclick="bookDirectSchedule('${item.type}', '${item.id}')"
+                            ${isFull ? 'disabled' : ''}
+                            class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                                isFull 
+                                ? 'bg-slate-100 text-slate-400 cursor-not-allowed' 
+                                : 'bg-primary-600 text-white hover:bg-primary-700 shadow-sm'
+                            }">
+                            ${isFull ? 'Tutup' : 'Pilih Jadwal'}
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // Filter tombol jadwal
+        function filterSchedule(type) {
+            ['all', 'toefl', 'toafl'].forEach(key => {
+                const btn = document.getElementById(`filter-${key}`);
+                if (key.toUpperCase() === type) {
+                    btn.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white transition-colors';
+                } else {
+                    btn.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors';
+                }
+            });
+            renderScheduleTable(type);
+        }
+
+        // Pilih ujian dari kartu informasi
+        function selectExamFromCard(examType) {
+            const radio = document.querySelector(`input[name="examType"][value="${examType}"]`);
+            if (radio) {
+                radio.checked = true;
+                updateFormState();
+                document.getElementById('formulir').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Pilih jadwal langsung dari tabel
+        function bookDirectSchedule(examType, scheduleId) {
+            const radio = document.querySelector(`input[name="examType"][value="${examType}"]`);
+            if (radio) {
+                radio.checked = true;
+                updateFormState();
+                const selectEl = document.getElementById('examSchedule');
+                selectEl.value = scheduleId;
+                document.getElementById('formulir').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Update dropdown jadwal, label NIM/NIK, dan harga
+        function updateFormState() {
+            const examType = document.querySelector('input[name="examType"]:checked').value;
+            const category = document.getElementById('participantCategory').value;
+
+            // 1. Update Dropdown Jadwal
+            const scheduleSelect = document.getElementById('examSchedule');
+            const availableSchedules = schedules.filter(s => s.type === examType && s.quota > 0);
+            
+            scheduleSelect.innerHTML = availableSchedules.map(s => 
+                `<option value="${s.id}">${s.date} — ${s.session} (${s.room}) [Sisa ${s.quota}]</option>`
+            ).join('');
+
+            // 2. Update Label NIM / NIK & Field Fakultas
+            const idLabel = document.getElementById('idNumberLabel');
+            const idInput = document.getElementById('idNumber');
+            const facultyField = document.getElementById('facultyField');
+            const facultyInput = document.getElementById('faculty');
+
+            if (category === 'UMUM') {
+                idLabel.innerHTML = 'NIK (Nomor Induk Kependudukan / KTP) <span class="text-red-500">*</span>';
+                idInput.placeholder = 'Masukkan 16 digit NIK sesuai KTP';
+                facultyField.classList.add('hidden');
+                facultyInput.required = false;
+            } else {
+                idLabel.innerHTML = 'NIM (Nomor Induk Mahasiswa) <span class="text-red-500">*</span>';
+                idInput.placeholder = 'Masukkan NIM Anda';
+                facultyField.classList.remove('hidden');
+                facultyInput.required = true;
+            }
+
+            // 3. Update Harga
+            const rate = pricing[examType][category];
+            document.getElementById('priceDisplay').textContent = rate.price;
+            document.getElementById('priceNote').textContent = rate.note;
+        }
+
+        // Handle Submit Formulir
+        document.getElementById('registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const examType = document.querySelector('input[name="examType"]:checked').value;
+            const category = document.getElementById('participantCategory').value;
+            const scheduleId = document.getElementById('examSchedule').value;
+            const fullName = document.getElementById('fullName').value.trim();
+            const idNumber = document.getElementById('idNumber').value.trim();
+
+            const selectedScheduleObj = schedules.find(s => s.id === scheduleId);
+            const rate = pricing[examType][category];
+
+            // Generate Nomor Registrasi & Virtual Account acak
+            const randomReg = Math.floor(1000 + Math.random() * 9000);
+            const randomVA = '88012026' + Math.floor(10000 + Math.random() * 90000);
+
+            // Isi data modal
+            document.getElementById('modal-reg-id').textContent = `REG-${examType}-${randomReg}`;
+            document.getElementById('modal-va-number').textContent = randomVA;
+            document.getElementById('modal-name').textContent = fullName;
+            document.getElementById('modal-id').textContent = idNumber;
+            document.getElementById('modal-exam').textContent = `${examType} (${category})`;
+            document.getElementById('modal-schedule').textContent = selectedScheduleObj 
+                ? `${selectedScheduleObj.date}, ${selectedScheduleObj.session}` 
+                : '-';
+            document.getElementById('modal-price').textContent = rate.price;
+
+            // Kurangi kuota simulasi
+            if (selectedScheduleObj && selectedScheduleObj.quota > 0) {
+                selectedScheduleObj.quota -= 1;
+                renderScheduleTable(currentFilter);
+                updateFormState();
+            }
+
+            // Tampilkan modal
+            const modal = document.getElementById('receipt-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            lucide.createIcons();
+        });
+
+        // Tutup Modal
+        function closeModal() {
+            const modal = document.getElementById('receipt-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Salin Nomor Virtual Account menggunakan execCommand (kompatibel iframe)
+        function copyVA() {
+            const vaText = document.getElementById('modal-va-number').textContent;
+            const tempInput = document.createElement('input');
+            tempInput.value = vaText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const copyTextEl = document.getElementById('copy-text');
+            copyTextEl.textContent = 'Tersalin!';
+            setTimeout(() => {
+                copyTextEl.textContent = 'Salin';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
